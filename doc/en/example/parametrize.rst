@@ -325,7 +325,7 @@ will be passed to respective fixture function::
     def y(request):
         return request.param * 2
 
-    @pytest.mark.parametrize('x, y', [('a', 'b')], indirect=['x'])
+    @pytest.mark.parametrize('x, y', [('a', 'b')], indirect=True)
     def test_indirect(x,y):
         assert x == 'aaa'
         assert y == 'b'
